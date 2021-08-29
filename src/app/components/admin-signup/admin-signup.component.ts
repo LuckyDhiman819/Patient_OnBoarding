@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-patient-signup',
-  templateUrl: './patient-signup.component.html',
-  styleUrls: ['./patient-signup.component.css']
+  selector: 'app-admin-signup',
+  templateUrl: './admin-signup.component.html',
+  styleUrls: ['./admin-signup.component.css']
 })
-export class PatientSignupComponent implements OnInit {
-
+export class AdminSignupComponent implements OnInit {
   errMessage : string = "";
-  patientSignUpForm : FormGroup;
+  adminSignUpForm : FormGroup;
   password:String = "";
   confirm_password:String = "";
 
@@ -21,23 +18,21 @@ export class PatientSignupComponent implements OnInit {
   ngOnInit(): void {
     // this.employees = this.employeeDetailService.getEmployee();
     //Model Driven FormBuilder
-    this.patientSignUpForm = this.formBuilder.group({
+    this.adminSignUpForm = this.formBuilder.group({
       admin_name : ['',[Validators.required, Validators.minLength(5)]],
       password : ['',[Validators.required,Validators.minLength(5)]],
       confirm_password : ['',Validators.required],
       email : ['',[Validators.required,Validators.email]],
       gender : ['', Validators.required],
-      phone : ['', Validators.required],
-      age : ['', Validators.required],
-      address : ['', Validators.required]
+      phone : ['', Validators.required]
     })
 
     // this.employeeDetailService.getNewEmployee().subscribe(result => this.employees = result,err => this.errMessage =err)
   }
 
   saveEmployee(){
-    console.log(this.patientSignUpForm.value)
-    // this.employeeDetailService.createEmployee(this.employeeForm.value).subscribe();
+    console.log(this.adminSignUpForm.value)
+    // this.employeeDetailService.createEmployee(this.adminSignUpForm.value).subscribe();
   }
 
   passwordMatch(password:String, confirm_password:String){
@@ -47,10 +42,7 @@ export class PatientSignupComponent implements OnInit {
     }
     return true;
 
-  constructor() { }
-
-  ngOnInit(): void {
-
   }
+
 
 }

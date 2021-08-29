@@ -1,6 +1,5 @@
-
 <div class="loginForm">
-    <form novalidate [formGroup]="patientLoginForm" (ngSubmit)="saveEmployee()">
+    <form novalidate [formGroup]="adminLoginForm" (ngSubmit)="saveEmployee()">
         <fieldset>
 
             <div class="container">
@@ -8,8 +7,8 @@
                 <div class="box">
                     <i class="fa fa-user"></i>
                     <input type="number" name="id" id="id" placeholder="Entre Your id" formControlName="id">
-                    <div class="alert alert-danger" *ngIf="patientLoginForm.get('id').hasError('required') &&
-                   patientLoginForm.get('id').dirty">
+                    <div class="alert alert-danger" *ngIf="adminLoginForm.get('id').hasError('required') &&
+                   adminLoginForm.get('id').dirty">
                         Phone is Required
                     </div>
                     <!-- <hr> -->
@@ -18,8 +17,8 @@
                     <i class="fa fa-key"></i>
                     <input type="password" name="password" id="password" placeholder="Entre Your Password"
                         formControlName="password">
-                    <div class="alert alert-danger" *ngIf="patientLoginForm.get('password').hasError('required') &&
-                   patientLoginForm.get('password').dirty">
+                    <div class="alert alert-danger" *ngIf="adminLoginForm.get('password').hasError('required') &&
+                   adminLoginForm.get('password').dirty">
                         Phone is Required
                     </div>
                     <!-- <hr> -->
@@ -30,5 +29,3 @@
     </form>
 
 </div>
-=======
-<p>patient-login works!</p>

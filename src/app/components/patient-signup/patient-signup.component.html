@@ -4,11 +4,11 @@
     <form novalidate [formGroup]="patientSignUpForm" (ngSubmit)="saveEmployee()">
       <fieldset>
         <div class="form-group">
-          <label>Admin Name</label>
-          <input type="text" class="form-control" formControlName="admin_name" required>
-          <div class="alert alert-danger" *ngIf="patientSignUpForm.get('admin_name').hasError('required') &&
-                   patientSignUpForm.get('admin_name').dirty">
-            Admin Name is Required
+          <label>Patient Name</label>
+          <input type="text" class="form-control" formControlName="patient_name" required>
+          <div class="alert alert-danger" *ngIf="patientSignUpForm.get('patient_name').hasError('required') &&
+                   patientSignUpForm.get('patient_name').dirty">
+            Patient Name is Required
           </div>
           <div class="alert alert-danger" *ngIf="patientSignUpForm.get('admin_name').hasError('minlength') &&
                    patientSignUpForm.get('admin_name').dirty">

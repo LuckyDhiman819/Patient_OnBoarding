@@ -1,0 +1,90 @@
+<div class="Card" style="max-width: 30rem;" align="center">
+    <form novalidate [formGroup]="admitForm" (ngSubmit)="sendAdmitForm()">
+        <fieldset>
+          <div class="form-group"><br>
+            <label><b>Name </b></label>
+            <input type="text"
+                   class="form-control" formControlName="name">
+                <div class="alert alert-danger"
+                   *ngIf="admitForm.get('name').hasError('required') &&
+                   admitForm.get('name').dirty">
+                 Name is Required
+              </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <tr>
+                <b>Gender : </b><label for="gender" class="mr-sm-2"></label>
+                <td>
+                    <input type="radio" name="gender" id="male" value="male" formControlName="gender" />Male 
+                    <input type="radio" name="gender" id="female" value="female" formControlName="gender" />Female 
+                    <input type="radio" name="gender" id="trans" value="trans" formControlName="gender" />Trans 
+                </td>
+            </tr>
+          </div>
+          <div class="form-group">
+            <label><b>Mobile Number </b></label>
+            <input type="text"
+                   class="form-control" formControlName="mobileNumber">
+                <div class="alert alert-danger"
+                   *ngIf="admitForm.get('mobileNumber').hasError('required') &&
+                   admitForm.get('mobileNumber').dirty">
+                 Mobile Number is Required for verification
+              </div>
+          </div>
+          <div class="form-group">
+            <label><b>Email</b></label>
+            <input type="email"
+                   class="form-control" formControlName="email">
+              <div class="alert alert-danger"
+                   *ngIf="admitForm.get('email').hasError('required') &&
+                   admitForm.get('email').dirty">
+                 Email is Required
+              </div>
+          </div>
+          <div class="form-group">
+            <label><b>Address</b></label>
+            <input type="text"
+                   class="form-control" formControlName="address">
+            <div class="alert alert-danger"
+                 *ngIf="admitForm.get('address').hasError('required') &&
+                 admitForm.get('address').dirty">
+               Address is Required
+            </div>
+            <div class="alert alert-danger"
+                 *ngIf="admitForm.get('address').hasError('minlength') &&
+                 admitForm.get('address').dirty">
+               Please enter a character above 5 
+            </div>
+          </div>
+      
+          <div class="form-group">
+                <b>Ward : </b><label for="ward" class="mr-sm-2"></label>
+                <p>Select which ward type you require</p>
+                    <select formControlName="ward" id="ward">
+                        <option selected="selected">Emergency</option>
+                        <option>General Ward</option>
+                        <option>Delux Ward</option>
+                        <option>ICU</option>
+                    </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label><b>Reason </b></label>
+            <p>Please specify detailed reason of Admit</p>
+            <input type="text"
+                   class="form-control" formControlName="reason">
+          </div>
+            <br>
+          <div class="form-group">
+            <label><b>Admit Date & Time </b></label>
+            <input type="datetime-local"
+                   class="form-control" formControlName="admitDateAndTime" required>
+          </div>
+        </fieldset> 
+        <br>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </form>
+      
+</div>
+

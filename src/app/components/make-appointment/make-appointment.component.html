@@ -1,0 +1,110 @@
+<div class="Card" style="max-width: 30rem;" align="center">
+    <form novalidate [formGroup]="appointmentForm" (ngSubmit)="sendAppointment()">
+        <fieldset>
+          <div class="form-group"><br>
+            <label><b>Name </b></label>
+            <input type="text"
+                   class="form-control" formControlName="name">
+                <div class="alert alert-danger"
+                   *ngIf="appointmentForm.get('name').hasError('required') &&
+                   appointmentForm.get('name').dirty">
+                 Name is Required
+              </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <tr>
+                <b>Gender : </b><label for="gender" class="mr-sm-2"></label>
+                <td>
+                    <input type="radio" name="gender" id="male" value="male" formControlName="gender" />Male 
+                    <input type="radio" name="gender" id="female" value="female" formControlName="gender" />Female 
+                    <input type="radio" name="gender" id="trans" value="trans" formControlName="gender" />Trans 
+                </td>
+            </tr>
+          </div>
+          <div class="form-group">
+            <label><b>Mobile Number </b></label>
+            <input type="text"
+                   class="form-control" formControlName="mobileNumber">
+                <div class="alert alert-danger"
+                   *ngIf="appointmentForm.get('mobileNumber').hasError('required') &&
+                   appointmentForm.get('mobileNumber').dirty">
+                 Mobile Number is Required
+              </div>
+          </div>
+          <div class="form-group">
+            <label><b>Email</b></label>
+            <input type="email"
+                   class="form-control" formControlName="email">
+              <div class="alert alert-danger"
+                   *ngIf="appointmentForm.get('email').hasError('required') &&
+                   appointmentForm.get('email').dirty">
+                 Email is Required
+              </div>
+          </div>
+          <div class="form-group">
+            <label><b>Address</b></label>
+            <input type="text"
+                   class="form-control" formControlName="address">
+            <div class="alert alert-danger"
+                 *ngIf="appointmentForm.get('address').hasError('required') &&
+                 appointmentForm.get('address').dirty">
+               Address is Required
+            </div>
+            <div class="alert alert-danger"
+                 *ngIf="appointmentForm.get('address').hasError('minlength') &&
+                 appointmentForm.get('address').dirty">
+               Please enter a character above 5 
+            </div>
+          </div>
+      
+          <div class="form-group">
+                <b>Diseases : </b><label for="disease" class="mr-sm-2"></label>
+                <p>Select which appointment type you require</p>
+                    <select formControlName="disease" id="disease">
+                        <option selected="selected">Body Checkup</option>
+                        <option>General checkup</option>
+                        <option>Cervix checkup</option>
+                        <option>Heart checkup</option>
+                        <option>Eye checkup</option>
+                        <option>Robotic Surgery</option>
+                        <option>Dental checkup</option>
+                        <option>Hearing Test</option>
+                        <option>Psycharity</option>
+                        <option>Cancer</option>
+                    </select>
+          </div>
+          <br>
+          <div class="form-group">
+          <tr>
+            <b>Doctor : </b><label for="doctor" class="mr-sm-2"></label>
+            <td>
+                <select formControlName="doctor" id="doctor">
+                    <option selected="selected">Dr. Tufail Ahmed</option>
+                    <option>Dr. Lucky Dhiman</option>
+                    <option>Dr. Ketan Shinde</option>
+                    <option>Dr. Kafil Rehman</option>
+                    <option>Dr. Pooja Karri</option>
+                    <option>Dr. Mulla Mohammad</option>
+                </select>
+            </td>
+        </tr>
+    </div>
+    <br>
+          <div class="form-group">
+            <label><b>Appointment Date & Time </b></label>
+            <input type="datetime-local"
+                   class="form-control" formControlName="appointmentDateAndTime" required>
+          </div>
+      
+          <div class="form-group">
+            <label><b>Message </b></label>
+            <input type="text"
+                   class="form-control" formControlName="message">
+          </div>
+        </fieldset> 
+        <br>
+        <button type="submit" class="btn btn-primary" >Send Appointment</button>
+      </form>
+      
+</div>

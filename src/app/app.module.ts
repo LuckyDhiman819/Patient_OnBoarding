@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { MakeAppointmentComponent } from './components/make-appointment/make-appointment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdmitFormComponent } from './components/admit-form/admit-form.component';
@@ -11,7 +10,6 @@ import { AdmitFormComponent } from './components/admit-form/admit-form.component
 @NgModule({
   declarations: [
     AppComponent,
-    PatientLoginComponent,
     MakeAppointmentComponent,
     AdmitFormComponent
   ],

@@ -9,3 +9,5 @@ export class Appointment {
     appointmentDateAndTime? : Date;
     message? : string;
 }
+
+

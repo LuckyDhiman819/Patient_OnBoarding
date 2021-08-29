@@ -13,6 +13,7 @@ import { AdminSignupComponent } from './components/admin-signup/admin-signup.com
 import { PatientSignupComponent } from './components/patient-signup/patient-signup.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
 
 
 
@@ -26,7 +27,8 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
     AdminSignupComponent,
     PatientSignupComponent,
     PatientLoginComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    EditPatientComponent
 
   ],
   imports: [

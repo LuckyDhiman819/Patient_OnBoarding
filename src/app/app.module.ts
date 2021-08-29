@@ -7,6 +7,7 @@ import { MakeAppointmentComponent } from './components/make-appointment/make-app
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdmitFormComponent } from './components/admit-form/admit-form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

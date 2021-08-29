@@ -47,10 +47,6 @@ export class PatientSignupComponent implements OnInit {
     }
     return true;
 
-  constructor() { }
-
-  ngOnInit(): void {
-
   }
 
 }

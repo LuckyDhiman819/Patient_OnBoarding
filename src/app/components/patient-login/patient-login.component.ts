@@ -25,10 +25,5 @@ export class PatientLoginComponent implements OnInit {
     console.log(this.patientLoginForm.value)
     // this.employeeDetailService.createEmployee(this.employeeForm.value).subscribe();
 
-  constructor() { }
-
-  ngOnInit(): void {
-
   }
-
 }

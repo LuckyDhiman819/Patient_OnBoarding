@@ -2,16 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-admin-signup',
-  templateUrl: './admin-signup.component.html',
-  styleUrls: ['./admin-signup.component.css']
+  selector: 'app-edit-patient',
+  templateUrl: './edit-patient.component.html',
+  styleUrls: ['./edit-patient.component.css']
 })
-export class AdminSignupComponent implements OnInit {
+export class EditPatientComponent implements OnInit {
+
   errMessage : string = "";
-  adminSignUpForm : FormGroup;
-  password:String = "";
-  confirm_password:String = "";
-  
+  patientEditForm : FormGroup;
+  old_password?:String;
+  new_password?:String;
+  confirm_password?:String;
+  name?:String = "lucky";
+  email?:String = "lucky@gmail.com";
+  gender?:String = "male";
+  phone?:String = "7988857819";
+
+  details = false;
+  lable = "Edit";
+  readonly = true;
+
 
   constructor(public formBuilder:FormBuilder) { 
   }
@@ -19,8 +29,11 @@ export class AdminSignupComponent implements OnInit {
   ngOnInit(): void {
     // this.employees = this.employeeDetailService.getEmployee();
     //Model Driven FormBuilder
-    this.adminSignUpForm = this.formBuilder.group({
-      admin_name : ['',[Validators.required, Validators.minLength(5)]],
+
+
+
+    this.patientEditForm = this.formBuilder.group({
+      patient_name : ['',[Validators.required, Validators.minLength(5)]],
       password : ['',[Validators.required,Validators.minLength(5)]],
       confirm_password : ['',Validators.required],
       email : ['',[Validators.required,Validators.email]],
@@ -32,7 +45,7 @@ export class AdminSignupComponent implements OnInit {
   }
 
   saveEmployee(){
-    console.log(this.adminSignUpForm.value)
+    console.log(this.patientEditForm.value)
     // this.employeeDetailService.createEmployee(this.adminSignUpForm.value).subscribe();
   }
 
@@ -45,5 +58,12 @@ export class AdminSignupComponent implements OnInit {
 
   }
 
+  show(){
+    this.details = true;  
+    this.readonly = false;
+  }
+  readOnly(){
+    this.readonly = true;
+  }
 
 }

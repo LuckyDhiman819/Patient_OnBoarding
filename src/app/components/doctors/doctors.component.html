@@ -1,0 +1,25 @@
+<p>doctors works!</p>
+
+<div class="container" *ngFor="let doc of doctor">
+    <!-- <hr> -->
+    <div>
+        <i class="fa fa-user-md logo fa-10x" aria-hidden="true"></i>
+    </div>
+    <div>
+        <div class="name">
+            <h1>{{doc.DoctorName}}</h1>
+        </div>
+        <div class="department">
+            <h2><i><b> {{doc.Department}}</b></i> </h2>
+        </div>
+        <div class="qualification">
+            <h4><b><i> {{doc.Qualification}} </i></b></h4>
+        </div>
+        <div class="expertise">
+            <h6> {{doc.Expertise}} </h6>
+        </div>
+        <button class="btn btn-primary">Make An Appointment</button>
+
+    </div>
+    <hr>
+</div>

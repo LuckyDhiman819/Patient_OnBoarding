@@ -14,6 +14,8 @@ import { PatientSignupComponent } from './components/patient-signup/patient-sign
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { EditPatientComponent } from './components/edit-patient/edit-patient.component';
+import { MedicinesComponent } from './components/medicines/medicines.component';
+import { DoctorsComponent } from './components/doctors/doctors.component';
 
 
 
@@ -28,7 +30,9 @@ import { EditPatientComponent } from './components/edit-patient/edit-patient.com
     PatientSignupComponent,
     PatientLoginComponent,
     AdminLoginComponent,
-    EditPatientComponent
+    EditPatientComponent,
+    MedicinesComponent,
+    DoctorsComponent
 
   ],
   imports: [
